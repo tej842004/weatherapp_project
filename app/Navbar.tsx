@@ -20,7 +20,7 @@ const Navbar = () => {
       <Link href="/">
         <TiWeatherSnow className="text-2xl" />
       </Link>
-      <ul className="flex space-x-6">
+      <ul className="flex space-x-6 max-sm:space-x-4">
         {links.map((link) => (
           <Link
             key={link.href}
