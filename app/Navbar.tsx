@@ -1,9 +1,10 @@
 "use client";
+import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { TiWeatherSnow } from "react-icons/ti";
+import { AiOutlineMenu } from "react-icons/ai";
 import classNames from "classnames";
-import styles from "./navbar.module.css";
 
 const Navbar = () => {
   const currentPath = usePathname();
@@ -15,12 +16,18 @@ const Navbar = () => {
     { label: "Contact", href: "/contact" },
   ];
 
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleNav = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
-    <nav className="flex space-x-6 mb-5 px-5 h-14 items-center">
+    <nav className="flex space-x-6 mb-5 px-5 h-14 items-center max-sm:justify-between">
       <Link href="/">
-        <TiWeatherSnow className="text-2xl" />
+        <TiWeatherSnow className="text-2xl max-sm:text-3xl" />
       </Link>
-      <ul className="flex space-x-6 max-sm:space-x-4">
+      <ul className="hidden sm:flex space-x-6">
         {links.map((link) => (
           <Link
             key={link.href}
@@ -35,6 +42,9 @@ const Navbar = () => {
           </Link>
         ))}
       </ul>
+      <div onClick={handleNav} className="sm:hidden cursor-pointer">
+        <AiOutlineMenu className="text-2xl" />
+      </div>
     </nav>
   );
 };
