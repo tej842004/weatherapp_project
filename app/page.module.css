@@ -106,3 +106,47 @@
   margin-top: 20px;
   color: white;
 }
+
+@media (max-width: 480px) {
+  .main {
+    padding: 2rem;
+  }
+
+  .widget {
+    height: 400px;
+    width: 300px;
+  }
+
+  .widget .weatherIcon {
+    font-size: 60px;
+  }
+
+  .input_field {
+    width: 80%;
+    font-size: 14px;
+  }
+
+  .search_button {
+    width: 90px;
+    height: 35px;
+  }
+
+  .icon_and_weatherInfo {
+    gap: 15px;
+    margin-top: 20px;
+  }
+
+  .temperature {
+    font-size: 35px;
+  }
+
+  .place {
+    font-size: 20px;
+    margin-top: 30px;
+  }
+
+  .date {
+    font-size: 14px;
+    margin-top: 5px;
+  }
+}

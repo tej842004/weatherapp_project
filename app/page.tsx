@@ -40,7 +40,8 @@ export default function Home() {
   async function fetchData(cityName: string) {
     try {
       const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=27751ed254cd4c8882645a21e5a3d441`
+        `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=27751ed254cd4c8882645a21e5a3d441`,
+        { cache: "no-store" }
       );
       const jsonData: WeatherData = await response.json();
       setWeatherData(jsonData);
